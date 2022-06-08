@@ -1,0 +1,33 @@
+server:
+  port: 8000
+
+mybatis:
+  mapper-locations: classpath:mapper/system/*.xml,classpath:mapper/query/*.xml
+  type-aliases-package: com.joyowo.smarthr.bean.entity.system,com.joyowo.smarthr.bean.entity.query
+  configuration-properties:
+    privilegeBase: '`smarthr-privilege`.'
+    reportBase: '`smarthr-report`.'
+    systemBase: '`smarthr-system`.'
+    taskBase: '`smarthr-task`.'
+    userBase: '`smarthr-user`.'
+    workflowBase: '`smarthr-workflow`.'
+    supplyBase: '`smarthr-supply`.'
+    crmBase: '`smarthr-crm`.'
+    fincBase: '`smarthr-finc`.'
+    tenancyBase: '`smarthr-tenancy`.'
+    cbsBase: '`smarthr-cbs`.'
+    logBase: '`smarthr-log`.'
+    processBase: '`smarthr-process`.'
+    basicBase: '`smarthr-basic`.'
+    
+utils:
+  idworker:
+    snowflake:
+      workerId: 21 #工作机器ID(0~31)
+      datacenterId: 0 #数据中心ID(0~31)
+#xxl-job 配置
+xxl:
+  job:
+    executor:
+      appname: ${spring.application.name}
+      port: 
